@@ -1,0 +1,42 @@
+export const projects = [
+  {
+    title: 'Project One',
+    description: 'This is the first project.',
+    date: '2023-01-01',
+    url: 'https://example.com/project-one',
+    images: ['/images/project1.jpg', '/images/project1-2.jpg'],
+    category: 'Web Development',
+  },
+  {
+    title: 'Project Two',
+    description: 'This is the second project.',
+    date: '2023-02-01',
+    url: 'https://example.com/project-two',
+    images: ['/images/project2.jpg', '/images/project2-2.jpg'],
+    category: 'Mobile Development',
+  },
+  {
+    title: 'Project Three',
+    description: 'This is the third project.',
+    date: '2023-03-01',
+    url: 'https://example.com/project-three',
+    images: ['/images/project3.jpg', '/images/project3-2.jpg'],
+    category: 'Data Science',
+  },
+  {
+    title: 'Project Four',
+    description: 'This is the fourth project.',
+    date: '2023-04-01',
+    url: 'https://example.com/project-four',
+    images: ['/images/project4.jpg', '/images/project4-2.jpg'],
+    category: 'Web Development',
+  },
+  {
+    title: 'Project Five',
+    description: 'This is the fifth project.',
+    date: '2023-05-01',
+    url: 'https://example.com/project-five',
+    images: ['/images/project5.jpg', '/images/project5-2.jpg'],
+    category: 'Machine Learning',
+  },
+];
