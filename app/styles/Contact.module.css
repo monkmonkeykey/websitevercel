@@ -1,0 +1,117 @@
+/* ✅ Estilos generales para la página de contacto */
+.contactContainer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ✅ Título de la sección */
+.contactTitle {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ✅ Sección de redes sociales */
+.socialSection {
+  margin-top: 30px;
+}
+
+.socialSection h2 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* ✅ Íconos de redes sociales */
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 28px;
+}
+
+.socialIcons a {
+  color: #14a76c;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.socialIcons a:hover {
+  color: black;
+}
+
+/* ✅ Estilos para el formulario */
+.contactForm {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: black;
+}
+
+.contactForm textarea { 
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ✅ Botón de enviar */
+.contactForm button {
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contactForm button:hover {
+  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  transform: translateY(-2px);
+}
+
+/* ✅ Responsividad */
+@media (max-width: 768px) {
+  .contactContainer {
+    padding: 20px;
+  }
+
+  .contactTitle {
+    font-size: 1.8rem;
+  }
+
+  .socialIcons {
+    gap: 10px;
+  }
+
+  .contactForm input,
+  .contactForm textarea {
+    font-size: 0.9rem;
+  }
+}

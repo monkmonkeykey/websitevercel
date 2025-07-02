@@ -1,0 +1,159 @@
+/* 🏠 Contenedor Principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px 0;
+  padding: 0 0px;
+  width: 100%;
+  font-size: 1.2rem;
+  color: #111;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🏷 Título */
+.title {
+width: 100%;
+  font-size: 2rem;
+  font-weight: 400;
+  
+  text-align: center;
+  margin-bottom: 60px;
+  color: rgb(160, 160, 160);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 📌 Diseño de cuadrícula */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 40px 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+  align-items: start;
+}
+
+/* 📌 Tarjeta de Proyecto */
+.projectCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Hace los contenedores cuadrados */
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  padding: 10px;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* 📷 Imagen del Proyecto */
+.imageWrapper {
+  width: 100%; /* Deja margen para el efecto */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0;
+  padding-top: 10px; /* Baja un poco la imagen */
+}
+
+.projectImage {
+  width: 80%;
+  height: auto;
+  max-height: 90%;
+  object-fit: cover;
+  padding-top: 75px;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+
+/* 🖱️ Información del Proyecto SIEMPRE visible en gris */
+.projectTitle {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 5px 0;
+  color: #666; /* Gris */
+  letter-spacing: 1px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  z-index: 2;
+  width: 90%;
+}
+
+.projectCategory {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  font-size: 1rem;
+  color: #666; /* Gris */
+  font-weight: 400;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  z-index: 2;
+  width: 90%;
+}
+
+/* 🖱️ Efecto hover con fondo negro y texto en blanco */
+.projectCard:hover .projectTitle,
+.projectCard:hover .projectCategory {
+  color: #fff;
+}
+
+.projectCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.projectCard:hover::after {
+  opacity: 1;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 1024px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projectGrid {
+    grid-template-columns: 1fr;
+    padding: 0px;
+    gap: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .title{
+  padding: 10px;
+  }
+}
+

@@ -1,0 +1,11 @@
+{
+  "title": "Todos los Proyectos",
+  "description": "Todos los proyectos de Josué",
+  "dateStart": "Fecha de Inicio",
+  "dateEnd": "Fecha de Finalización",
+  "location": "Ubicación",
+  "category": "Categoría",
+  "collaborators": "Colaboradores",
+  "credits": "Créditos",
+  "notFound": "Proyecto no encontrado"
+}

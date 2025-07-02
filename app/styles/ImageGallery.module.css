@@ -1,0 +1,11 @@
+.customImageGallery .image-gallery-slide img {
+    max-width: 80%; /* Ajusta este valor para cambiar el tamaño de la imagen */
+    max-height: 80%; /* Ajusta este valor para cambiar la altura de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }
+  
+  .customImageGallery .image-gallery-thumbnail img {
+    max-width: 80px; /* Ajusta este valor para cambiar el tamaño de las miniaturas */
+    max-height: 80px; /* Ajusta este valor para cambiar la altura de las miniaturas */
+  }
+  

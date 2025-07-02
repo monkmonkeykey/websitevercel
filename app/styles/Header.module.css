@@ -1,0 +1,245 @@
+/* 🏠 Contenedor Principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px 0;
+  padding: 0;
+  max-width: 100%;
+  font-size: 1.2rem;
+  color: #111;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🏷 Título */
+.title {
+  
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ✅ Header general */
+.header {
+    position: fixed;
+  width: 100vw;
+  height: 60px;
+  background:rgb(21, 21, 21,0); 
+ background-color: rgba(21, 21, 21, 1); /* en lugar de 0 */
+  backdrop-filter: blur(8px); /* efecto bonito si hay scroll */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+ padding: 0 20px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* ✅ Menú en versión escritorio */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;           
+  padding: 0 20px;     
+  box-sizing: border-box;
+  background-color: rgb(21, 21, 21);
+}
+
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 1rem;
+  justify-content: center;
+  
+  
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(195, 194, 194);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ✅ Distribución específica del menú */
+.menuLeft {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+  padding-left: 0px; /* 🔹 Ajusta este valor según necesites */
+}
+
+.menuCenter {
+  display: flex;
+  justify-content: center;
+  flex: 2;
+}
+
+.menuRight {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* ✅ Ocultar menú hamburguesa en escritorio */
+.menuToggle {
+  display: none;
+}
+
+/* ✅ Menú lateral en móviles */
+@media (max-width: 1024px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .menu {
+    display: none;
+  }
+  
+  .menuToggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    left: 20px;
+    color: rgb(160, 160, 160);
+    z-index: 1002;
+  }
+
+  .menuBackground {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .menuBackground.show {
+    display: block;
+  }
+
+  .menu.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out;
+    z-index: 1001;
+    align-items: flex-start;
+  }
+  
+  .menu.show li {
+    width: 100%;
+  }
+  
+  .menu.show li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    padding: 10px 15px;
+  }
+}
+
+
+/* ✅ Ocultar menú móvil en escritorio */
+.menuMobile {
+
+  display: none;
+}
+
+/* ✅ Mostrar menú móvil correctamente en pantallas pequeñas */
+@media (max-width: 1024px) {
+  .menu {
+    display: none; /* Oculta el menú de escritorio */
+  }
+/* ✅ Ocultar el menú móvil en escritorio */
+.menuMobile {
+  display: none;
+}
+
+/* ✅ Estilos del menú lateral en móviles */
+@media (max-width: 1024px) {
+  .menu {
+    display: none; /* Ocultar menú de escritorio */
+  }
+
+  /* 🔹 Menú móvil (inicialmente oculto) */
+  .menuMobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -750px; /* ✅ Inicia oculto en el lado izquierdo */
+    background: black;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out; /* ✅ Animación al abrir */
+    z-index: 1001;
+    align-items: flex-start;
+  }
+
+  /* 🔹 Mostrar el menú cuando está activo */
+  .menuMobile.show {
+    left: 0; /* ✅ Se despliega desde la izquierda */
+  }
+
+  .menuMobile li {
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .menuMobile li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+
+    text-align: left;
+    display: block;
+    padding: 10px 15px;
+  }
+}
+
+}

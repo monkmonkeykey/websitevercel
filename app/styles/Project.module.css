@@ -1,0 +1,879 @@
+.projectContainer,
+.menu,
+.menu li a,
+.collaboratorCard,
+.popupContent,
+.popupText,
+.imageCaption {
+font-family: 'Inter', sans-serif;
+overflow-x: hidden; /* Evita desplazamiento horizontal */
+overflow-y: hidden; /* Evita desplazamiento horizontal */
+}
+
+
+.projectContainer {
+  max-width: 100%;
+  margin: auto;
+  padding:0px 0px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.projectContainer h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.projectContainer p {
+  
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.imageCaption {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+.mainImageContainer {
+  position: relative;
+  width: 100%;  /* Cambiamos de 100vw a 100% para evitar scrollbar lateral */
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.mainImageWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.mainImage {
+  width: 100%;  /* Cambiamos de 100vw a 100% para evitar que sobrepase el viewport */
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.overlayText {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  
+  font-size: 2rem;
+  
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  max-width: 90%;
+  text-align: left;
+}
+
+
+
+@media (max-width: 768px) {
+  .projectContainer {
+    text-align: center; /* Centrar todo el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: -750px; /* ✅ Inicia oculto en el lado izquierdo */
+  }
+
+  .projectTitle {
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .projectDetails {
+    text-align: center; /* Asegurar que los detalles también estén centrados */
+    width: 90%;
+  }
+
+
+
+
+
+}
+
+.projectTitle {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+  
+  color: rgb(237, 237, 237);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* Sección de imágenes en miniatura */
+.thumbnailGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.thumbnailImage {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.thumbnailImage:hover {
+  transform: scale(1.1);
+}
+
+/* Sección de colaboradores */
+.collaborators {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.collaboratorsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.collaboratorCard {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  width: 100px;
+}
+
+.collaboratorCard:hover {
+  transform: scale(1.1);
+}
+
+.collaboratorImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover; /* Mantiene la proporción sin deformar */
+  display: block;
+  margin: 0 auto; /* Centra la imagen */
+
+}
+
+
+.collaboratorName {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Sección de detalles del proyecto */
+.projectDetails {
+  text-align: left;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.projectDetails p {
+  margin-bottom: 10px;
+}
+
+/* Popup de galería */
+.galleryOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.galleryContent {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  max-width: 80%;
+  max-height: 80vh;
+  overflow-y: auto; /* 🔹 Permite hacer scroll si la imagen es grande */
+}
+
+/* 🔹 Ajuste en móviles */
+@media (max-width: 768px) {
+  .galleryContent {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+
+.galleryImage {
+  max-width: 90%;
+  max-height: 70vh;
+}
+
+
+/* Botones de navegación en la galería */
+.prevButton, .nextButton, .closeButton {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.closeButton {
+  top: 10px;
+  right: 10px;
+}
+
+/* 🔹 Botones de navegación en la galería */
+.prevButton, .nextButton {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 28px; /* 🔹 Más grande para móviles */
+  cursor: pointer;
+  color: white;
+  transition: opacity 0.3s;
+}
+
+.prevButton {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nextButton {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 🔹 Ajustes específicos en móviles */
+@media (max-width: 768px) {
+  .prevButton, .nextButton {
+    font-size: 24px; /* 🔹 Un poco más pequeño en móviles */
+  }
+}
+
+/* 🔹 POPUP DE COLABORADORES - MEJORADO */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px; /* 🔹 Asegura que haya margen en móviles */
+}
+
+/* 🔹 Contenido del popup (Galería, Colaboradores, etc.) */
+.popupContent {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-height: 80%;
+  overflow-y: auto;
+  
+  /* 🔹 Centrando correctamente */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed; /* 🔹 Asegura que se mantenga centrado */
+}
+
+/* 🔹 Ajuste para móviles */
+@media (max-width: 768px) {
+  .popupContent {
+    width: 90%; /* 🔹 Más ancho en móviles */
+  }
+}
+
+/* 🔹 Cuerpo del popup */
+.popupBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔹 Imagen del colaborador */
+.popupImage {
+  object-fit: cover;  /* ✅ Evita recorte en imágenes amplias */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .popupImage {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* 🔹 Texto del popup */
+.popupText {
+  text-align: left;
+  width: 100%;
+}
+
+.popupText h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+
+
+/* 🔹 Botón de cierre */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px; /* 🔹 Más grande para facilitar el toque */
+  cursor: pointer;
+  color: black;
+  transition: opacity 0.3s;
+}
+
+.closeButton:hover {
+  opacity: 1;
+  color:white;
+}
+
+.collaboratorBio {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #333;
+}
+
+
+
+/* ✅ Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .mainImage {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* cover */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.imageCaption {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+}
+
+.placeContainer {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  align-items: center;
+  margin-top: 0px;
+}
+.placeTag {
+  font-size: 1.2rem; /* ✅ Ajusta el tamaño de fuente */
+  font-weight: bold;
+  text-transform: uppercase; /* ✅ Convierte el texto en MAYÚSCULAS */
+  text-align: center; /* ✅ Centrado (ajústalo a 'left' o 'right' si lo necesitas) */
+  margin-top: 20px; /* ✅ Espaciado superior */
+  margin-bottom: 10px; /* ✅ Espaciado inferior */
+  letter-spacing: 1px; /* ✅ Espaciado entre letras para mejor legibilidad */
+  color: #b2b2b2; /* ✅ Un tono oscuro para mejor contraste */
+  /* border-bottom: 2px solid #ddd; /* ✅ Línea sutil debajo */
+  padding-bottom: 5px; /* ✅ Espaciado antes de la línea */
+}
+
+.placeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* ✅ alinear contenido arriba */
+  min-height: 100px; /* ✅ igual altura base si se requiere */
+}
+
+.placeCard:hover {
+  transform: scale(1.05);
+}
+
+
+
+.placeName {
+  font-size: 14px;
+  
+}
+.imageCaption {
+  text-align: center;
+  font-size: 14px;
+  color: #8e8d8d;
+  margin-top: 0px;
+}
+
+
+/* ✅ Contenedor de video y audio */
+.mediaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1050px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* ✅ Bloques de media cuando hay ambos (video y audio) */
+.mediaBlock {
+  flex: 1;
+  max-width: 50%;
+}
+
+/* ✅ Si solo hay un elemento, ocupa el 100% */
+.singleMedia {
+  flex-direction: column;
+  align-items: center;
+}
+
+.singleMedia .mediaBlock {
+  max-width: 100%;
+}
+
+/* ✅ Ajuste del video y audio */
+.mediaPlayer {
+  width: 100%;
+  height: 250px;
+}
+
+/* ✅ Para pantallas pequeñas */
+/* ✅ Asegurar que en móviles todo quede centrado */
+@media (max-width: 768px) {
+  .mediaContainer {
+    flex-direction: column;
+    align-items: center; /* 🔹 Centrar los elementos */
+    text-align: center;
+    width: 100%; /* 🔹 Asegurar que ocupe todo el ancho */
+  }
+
+  .mediaBlock {
+    max-width: 100%; /* 🔹 Ocupar todo el ancho en móviles */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔹 Centrar el contenido */
+  }
+
+  .mediaPlayer {
+    width: 100%; /* 🔹 Ocupar todo el ancho */
+    max-width: 90%; /* 🔹 Evitar que se vea demasiado ancho */
+  }
+}
+
+
+/* 🔹 Asegurar que cada sección ocupa la mitad */
+.videoSection,
+.audioSection {
+  width: 100%;
+}
+
+/* 🔹 Línea divisoria debajo de los títulos */
+.videoSection h2,
+.audioSection h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* 🔹 Ajuste del video y audio */
+.videoPlayer,
+.audioPlayer {
+  width: 100%;
+  
+  
+}
+.descriptionContainer {
+  background: #333;
+  color: white;
+  padding: 40px 10%;
+  text-align: left;
+}
+
+.descriptionTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.descriptionText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+.projectDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000000;
+  text-align: left; /* ✅ Alinear a la izquierda */
+  max-width: 100%;
+  margin: 50px -20px; /* ✅ Centrar el bloque pero mantener texto a la izquierda */
+  padding: 0 20px;
+}
+
+
+
+
+/* 🔹 Estilo en cursiva para la descripción */
+.italic {
+  font-style: italic;
+  color: #666; /* Un tono más claro para diferenciar */
+}
+
+.fechaResultado {
+  font-size: 1rem;
+  color: rgb(160, 160, 160); /* ✅ Un gris oscuro para mejor contraste */
+  text-align: center; /* ✅ O cámbialo a left si lo quieres alineado a la izquierda */
+  margin-top: 10px;
+  letter-spacing: 0.5px; /* ✅ Separación ligera entre caracteres */
+  text-transform: uppercase; /* ✅ Opcional: ponerlo en mayúsculas */
+  padding-bottom: 5px; /* ✅ Espaciado debajo de la línea */
+}
+.customNameCollaborator {
+  font-size: 1.2rem; /* ✅ Ajusta el tamaño de fuente */
+  
+  text-transform: uppercase; /* ✅ Convierte el texto en MAYÚSCULAS */
+  text-align: center; /* ✅ Centrado (ajústalo a 'left' o 'right' si lo necesitas) */
+  margin-top: 20px; /* ✅ Espaciado superior */
+  margin-bottom: 10px; /* ✅ Espaciado inferior */
+  letter-spacing: 1px; /* ✅ Espaciado entre letras para mejor legibilidad */
+  color: #b9b8b8; /* ✅ Un tono oscuro para mejor contraste */
+  /* border-bottom: 2px solid #ddd; /* ✅ Línea sutil debajo */
+  padding-bottom: 5px; /* ✅ Espaciado antes de la línea */
+}
+
+.description {
+  /* font-style: italic; ✅ Texto en cursiva */
+  font-weight: bold;
+  color: rgb(160, 160, 160);  /* ✅ Un tono gris oscuro para mejor legibilidad */
+  font-size: 1rem; /* ✅ Tamaño de fuente estándar */
+  line-height: 1.5; /* ✅ Espaciado entre líneas */
+  display: inline-block; /* ✅ Mantener el comportamiento en línea */
+  margin-right: 5px; /* ✅ Espacio entre `description` y `specs` */
+  display: block; /* ✅ Se convierte en bloque para justificar */
+  
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ✅ Estilo opcional para `specs` si necesitas más énfasis */
+.specs {
+   /* ✅ Hace que `specs` resalte más */
+  color: #222; /* ✅ Un tono más oscuro */
+  display: block; /* ✅ Se convierte en bloque para justificar */
+  text-align: justify; /* ✅ Alineación justificada */
+  
+}
+
+.markdownContent {
+  font-size: 1rem;
+  line-height: 1.7; /* ✅ Espaciado para mejor legibilidad */
+  max-width: clamp(70%, 80vw, 1200px);
+  margin: 0 auto;
+  padding: 2vw;
+  text-align: justify; /* ✅ Alineación justificada */
+  color: #333; /* ✅ Color oscuro para mejor contraste */
+  
+  
+  padding: 0 0px; /* ✅ Espaciado interno en pantallas más pequeñas */
+  word-break: break-word; /* ✅ Evita desbordes en palabras largas */
+}
+
+/* 🔹 Estilos para encabezados dentro de Markdown */
+.markdownContent h1,
+.markdownContent h2,
+.markdownContent h3 {
+  font-weight: bold;
+  color: black;
+  margin-top: 20px;
+  text-transform: uppercase; /* ✅ Mantener los títulos en mayúsculas */
+}
+
+/* 🔹 Estilos para listas */
+.markdownContent ul,
+.markdownContent ol {
+  padding-left: 20px; /* ✅ Indentación */
+  margin-bottom: 10px;
+}
+
+/* 🔹 Estilos para enlaces */
+.markdownContent a {
+  color: #0077cc;
+  text-decoration: none;
+
+}
+
+.markdownContent a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Estilos para citas */
+.markdownContent blockquote {
+  border-left: 4px solid #0077cc;
+  padding-left: 15px;
+  color: #555;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+/* 🔹 Estilos responsivos */
+@media (max-width: 768px) {
+  .markdownContent {
+    font-size: 0.95rem;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* ✅ Estilos para la galería de imágenes */
+.galleryContainer {
+  width: 100vw; /* Ocupar todo el ancho de la pantalla */
+  overflow-x: auto; /* Habilitar desplazamiento horizontal */
+  white-space: nowrap; /* Evitar que las imágenes se vayan a una nueva línea */
+  display: flex;
+  gap: 10px;
+  padding: 20px 0;
+  scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+}
+
+.galleryContainer img {
+  height: 80vh; /* Ajustar la altura de las imágenes */
+  max-width: none; /* Evitar restricciones en el ancho */
+  object-fit: cover; /* Asegurar que las imágenes mantengan proporción */
+}
+
+/* ✅ Ajustes para ocultar scrollbar en algunos navegadores */
+.galleryContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* ✅ Contenedor general de la galería */
+.galleryWrapper {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ✅ Botones de navegación */
+.galleryButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.galleryButton:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+/* ✅ Galería de imágenes a pantalla completa */
+.fullGallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Añadido para centrar verticalmente */
+  gap: 20px;
+  max-width: clamp(72%, 80vw, 1200px);
+  margin: 0 auto; /* Centra horizontalmente */
+  min-height: 100vh; /* Para centrar verticalmente si se desea */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.fullImageContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.fullImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 90vh;
+  border-radius: 0px;
+}
+
+
+
+/* ✅ Estilos para el rol del colaborador (negritas y mayúsculas) */
+.collaboratorRole {
+  font-size: 1rem;
+   /* 🔹 Negritas */
+  text-transform: uppercase; /* 🔹 Mayúsculas */
+  color: #222; /* 🔹 Un tono oscuro para mejor contraste */
+  margin: 5px 0; /* 🔹 Espaciado entre líneas */
+}
+
+/* ✅ Estilos para la ubicación del colaborador (solo negritas, sin mayúsculas) */
+.collaboratorLocation {
+  font-size: 1rem;
+   /* 🔹 Negritas */
+  color: #222; /* 🔹 Un tono oscuro para mejor contraste */
+  margin: 5px 0; /* 🔹 Espaciado entre líneas */
+}
+
+.mainImageCredit {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+  margin-top: 8px; /* Espaciado entre la imagen y el crédito */
+}
+
+.videoContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 600px;
+  border-radius: 10px;
+}
+
+/* 🔹 Contenedor general alineado con el sitio */
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: clamp(70%, 80vw, 1200px);
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* 🔹 Contenedores de Lugar y Productores con misma altura */
+.placeContainer, .collaboratorsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 🔹 Títulos "LUGAR" y "PRODUCTORES" alineados en la misma altura */
+.sectionTitle {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 15px;
+  min-height: 24px; /* 🔹 Esto fuerza que los títulos tengan la misma altura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔹 Lugar: Imagen alineada con el nombre debajo */
+.placeCard {
+  display: flex;
+  flex-direction: column; /* 🔹 Ahora el nombre está debajo de la imagen */
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* 🔹 Imagen del Lugar */
+.placeImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 🔹 Nombre del Lugar (ahora debajo de la imagen) */
+.placeName {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 🔹 Contenedor de los colaboradores */
+.collaboratorsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+/* 🔹 Cada colaborador tiene su imagen y su nombre alineados */
+.collaboratorCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* ✅ alinear contenido arriba */
+  min-height: 100px; /* ✅ igual altura base si se requiere */
+}
+
+/* 🔹 Miniaturas más pequeñas y sin deformación */
+.collaboratorImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 🔹 Nombre del colaborador alineado y sin corte */
+.collaboratorName {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  
+}
+

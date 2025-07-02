@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+/* 🔹 Variables globales */
+:root {
+  --primary-color: rgba(121, 93, 135, 0.701);  /* Azul oscuro */
+  --secondary-color: #ffd040;  /* Amarillo vibrante */
+  --background-color: rgb(21, 21, 21);  /* Blanco hueso */
+  --accent-color: black;  /* Rojo profundo */
+  --text-color: rgb(160, 160, 160);  /* Blanco puro */
+  --font-family: 'Inter', sans-serif;
+  --font-size-base: 16px;
+  --font-size-large: 20px;
+  --font-size-small: 14px;
+  --line-height: 1.6;
+  --border-radius: 0px;  /* 🔹 Esquinas cuadradas */
+  --spacing: 10px;  /* 🔹 Espaciado general */
+}
+
+/* 🔹 Estilo global */
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height);
+}
+
+/* 🔹 Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  font-weight: 600;
+  margin-bottom: var(--spacing);
+  color: black;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* 🔹 Párrafos */
+p {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+}
+
+/* 🔹 Botones */
+button {
+  font-family: var(--font-main);
+  font-size: var(--font-size-small);
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+button:hover {
+  background-color: black;
+}
+
+/* 🔹 Enlaces */
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* 🔹 Tarjetas */
+.card {
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,122 @@
+/* Contenedor principal de los colaboradores */
+.collaborators {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.collaborators h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Contenedor de la cuadrícula de colaboradores */
+.collaboratorsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Tarjeta de cada colaborador */
+.collaboratorCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.collaboratorCard:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen del colaborador */
+.collaboratorImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  background-color: #222;
+}
+
+/* Nombre del colaborador */
+.collaboratorName {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Estilos para el popup de colaborador */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.popupImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  background-color: #444;
+}
+
+.popupContent h2 {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.popupContent p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-top: 5px;
+}
+
+/* Botón de cierre del popup */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ffffff;
+  transition: color 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+  color: #ff5555;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .popupContent {
+    max-width: 90%;
+  }
+
+  .popupImage {
+    width: 100px;
+    height: 100px;
+  }
+}

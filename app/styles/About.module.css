@@ -1,0 +1,332 @@
+.main,
+.title,
+.statementSection,
+.collaboratorCard,
+.popupContent,
+.popupText,
+.imageCaption,
+.markdown,
+.bioSection h2,
+.statementSection h2,
+.cvSection h2 {
+font-family: 'Inter', sans-serif;
+}
+/* 🔹 Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  font-family: 'Inter', sans-serif;
+
+}
+
+/* 🔹 Sección principal */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  padding: 40px;
+  background: rgb(21);
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🔹 Título */
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 🔹 Sección de Bio + Artist Statement */
+.bioStatementContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 900px;
+  width: 100%;
+  align-items: flex-start;
+
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+/* 🔹 Asegurar que cada sección ocupa la mitad */
+.bioSection,
+.statementSection {
+  width: 50%;
+}
+
+/* 🔹 Línea divisoria debajo de los títulos */
+.bioSection h2,
+.statementSection h2 {
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* 🔹 Estilo del texto */
+.markdown {
+  color: white;
+  line-height: 1.6;
+  font-size: 0.90rem;
+  text-align: justify; 
+ 
+
+}
+
+/* 🔹 Estilo para los enlaces dentro del markdown */
+.markdown a {
+  color: #14a76c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Sección del CV */
+.cvSection {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* 🔹 Botón del CV */
+.cvButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cvButton:hover {
+  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  transform: translateY(-2px);
+}
+
+/* 🔹 Modal del CV */
+.cvModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cvModalContent {
+  background: white;
+  padding: 25px;
+  width: 85%;
+  max-width: 750px;
+  border-radius: 12px;
+  position: relative;
+
+}
+
+.cvModalContent iframe {
+  width: 100%;
+  height: 550px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #444;
+}
+
+.closeButton:hover {
+  color: #c62828;
+}
+
+/* 🔹 Sección de Redes Sociales */
+.socialSection {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 28px;
+}
+
+.socialIcons a {
+  color: #14a76c;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.socialIcons a:hover {
+  color: #000;
+  transform: scale(1.15);
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 768px) {
+  .bioStatementContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .bioSection,
+  .statementSection {
+    width: 100%;
+  }
+}
+/* 🔹 Contenedor de la imagen */
+/* 🔹 Contenedor de la imagen */
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinear todo a la izquierda */
+  width: 100%;
+  max-width: 900px;
+
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  
+}
+
+.profileImage {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto; /* 🔹 Esto centra horizontalmente */
+}
+
+
+
+
+
+
+/* 🔹 Ajuste del contenedor de Bio + Artist Statement */
+.bioStatementContainer {
+  display: flex;
+  flex-direction: row; /* ✅ Mantiene la alineación en línea */
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 900px;
+  width: 100%;
+  align-items: flex-start;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  flex-wrap: wrap; /* ✅ Permite que los elementos se acomoden bien */
+
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #111;
+  
+  letter-spacing: 2px;
+}
+
+/* 🔹 Asegurar que cada sección ocupa la mitad */
+.bioSection,
+.statementSection {
+  width: calc(50% - 25px); /* ✅ Evita que el texto se corte */
+}
+
+/* 🔹 Pie de imagen */
+.imageCaption {
+  font-size: 14px;
+  color: rgb(180,180,180);
+  font-style: italic;
+  text-align: right; /* Alinear el texto a la derecha */
+  width: 100%; /* Asegurar que el caption ocupa el ancho del contenedor */
+  margin-top: 5px; /* Espaciado superior */
+  padding-right: 10px; /* Espaciado derecho para separarlo del borde */
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 768px) {
+  .bioStatementContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bioSection,
+  .statementSection {
+    width: 100%;
+  }
+
+  .imageContainer {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+/* 🔹 Sección del CV */
+.cvSection {
+
+  text-align: center;
+  margin-top: 50px;
+  width: 100%; /* ✅ Asegura que esté en una sola columna */
+  max-width: 900px; /* ✅ Ajuste del ancho para que coincida con las otras secciones */
+}
+
+/* 🔹 Estilo del título del CV */
+.cvSection h2 {
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase; /* ✅ Ahora el texto se verá en mayúsculas */
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  text-align: center; /* ✅ Alineado con el resto de los títulos */
+}
+
+/* 🔹 Ajuste del botón */
+.cvButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #000000, #000000);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0; /* ✅ Hace que el botón sea completamente cuadrado */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cvButton:hover {
+  background: linear-gradient(135deg, black, black);
+  transform: translateY(-2px);
+}
+
+
+/* 🔹 Responsividad */
+@media (max-width: 768px) {
+  .cvSection {
+    text-align: center;
+  }
+}

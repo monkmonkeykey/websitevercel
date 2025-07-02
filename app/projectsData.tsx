@@ -1,0 +1,42 @@
+export const projects = [
+  {
+    title: 'Project One',
+    description: 'This is the first project.',
+    date: '2023-01-01',
+    url: 'https://example.com/project-one',
+    images: ['https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg','https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg'],
+    category: 'Web Development',
+  },
+  {
+    title: 'Project Two',
+    description: 'Mafu',
+    date: '2023-02-01',
+    url: 'https://example.com/project-two',
+    images: ['https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg','https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg'],
+    category: 'Mobile Development',
+  },
+  {
+    title: 'Project Three',
+    description: 'This is the third project.',
+    date: '2023-03-01',
+    url: '',
+    images: ['https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg','https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg'],
+    category: 'Data Science',
+  },
+  {
+    title: 'Project Four',
+    description: 'This is the fourth project.',
+    date: '2023-04-01',
+    url: 'https://example.com/project-four',
+    images: ['https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg','https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg'],
+    category: 'Web Development',
+  },
+  {
+    title: 'Project Five',
+    description: 'This is the fifth project.',
+    date: '2023-05-01',
+    url: 'https://example.com/project-five',
+    images: ['https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg','https://luzmariasanchez.s3.us-east-2.amazonaws.com/work/image/original/DSC02643.jpeg'],
+    category: 'Machine Learning',
+  },
+];

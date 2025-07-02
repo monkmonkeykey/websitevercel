@@ -1,0 +1,57 @@
+.card {
+  background-color: #1a1a1a;
+  
+  border: 0px solid #333;
+  border-radius: 8px;
+  padding: 0rem;
+  transition: transform 0.4s;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border: 0px solid #333;
+}
+
+.imageGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+
+.image {
+  max-width: 100%;
+  max-height: 180px; /* Ajusta la altura máxima para evitar desbordamientos */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 8px; /* Mantiene el borde redondeado */
+  display: block;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  object-fit: cover; /* Asegura que la imagen se recorte adecuadamente si es necesario */
+}
+
+.title {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.date, .category {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.description {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 1rem 0;
+}
+
+.url {
+  color: #1E90FF;
+  text-decoration: none;
+}
+
+.url:hover {
+  text-decoration: underline;
+}

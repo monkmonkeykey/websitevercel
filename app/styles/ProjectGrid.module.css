@@ -1,0 +1,63 @@
+/* 🏠 Contenedor de la cuadrícula */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 🔹 Tamaño flexible */
+  gap: 20px; /* 🔹 Espaciado entre elementos */
+  padding: 40px 20px;
+  justify-content: center;
+  align-items: start;
+}
+
+/* 🎭 Tarjeta de Proyecto */
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🖼 Envoltura de Imagen */
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 4/5; /* 🔹 Relación de aspecto cuadrada con ligera variación */
+  overflow: hidden;
+}
+
+/* 📌 Imagen de Proyecto */
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔹 Evita deformaciones */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 📌 Efecto hover */
+.projectCard:hover {
+  transform: scale(1.02);
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+/* 🔹 Contenedor de la información */
+.projectInfo {
+  text-align: left;
+  padding: 12px 0;
+}
+
+/* 🔹 Título */
+.projectTitle {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* 🔹 Categoría */
+.projectCategory {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}

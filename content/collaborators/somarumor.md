@@ -1,0 +1,7 @@
+---
+name: "SOMARUMOR | 2º Encuentro Latino Americano De Arte Sonoro"
+role: "Residencia"
+location: "Todos lados"
+bio: "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora. En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos apoyo híbrido para aquellos que no puedan asistir a la conferencia en persona. NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México."
+image: "https://res.cloudinary.com/dmrzmnjln/image/upload/v1739659902/website/collaborators/anzuylasp5zij5jache4.png"
+---
